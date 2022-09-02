@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('sales_invoices', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('admin_id')->nullable();
+            $table->string('challan_no')->nullable();
+            $table->foreignId('user_id');
+            $table->date('date');
             $table->timestamps();
         });
     }

@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('admin_id')->nullable();
+            $table->foreignId('user_id');
+            $table->double('amount');
+            $table->date('date');
+            $table->string('note');
             $table->timestamps();
         });
     }

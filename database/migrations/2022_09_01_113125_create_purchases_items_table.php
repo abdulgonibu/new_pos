@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('purchases_items', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('product_id');
+            $table->foreignId('purchase_invoice_id');
+            $table->double('quantity');
+            $table->double('price');
+            $table->double('total');
             $table->timestamps();
         });
     }
